@@ -152,6 +152,17 @@ A web application built with .NET and Blazor for managing and visualizing data.
 
 </div>
 
+<div class="project-card">
+
+<h3> Kommer snart</h3>
+
+<p>
+Kommer snart
+</p>
+
+</div>
+
+
 </div>
 
 </section>
