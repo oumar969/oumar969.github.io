@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Oumar Ammar | Software Engineer</title>
 
 <link rel="stylesheet" href="style.css">
-<script defer src="script.js"></script>
 
 </head>
+
 
 <body>
 
 <nav>
+
 <div class="logo">Oumar.dev</div>
 
 <ul>
@@ -22,6 +24,7 @@
 <li><a href="#projects">Projects</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
+
 </nav>
 
 
@@ -125,20 +128,21 @@ and working with modern technologies.
 <h3>For Hinanden – Community Help Platform</h3>
 
 <p>
-A digital platform designed to strengthen community support by connecting
-people who need help with volunteers in their local area.
-</p>
-
-<p>
-The project focuses on reducing social barriers that prevent people from
-asking for help while creating trust and meaningful local connections.
+A digital platform designed to connect people in local communities
+who need help with volunteers willing to assist.
 </p>
 
 <p><strong>Tech:</strong> React, Node.js, Express, REST API, AWS</p>
 
-<a href="https://github.com/Zenbax/for-hinanden-frontend" target="_blank">Frontend GitHub</a>
+<a href="https://github.com/Zenbax/for-hinanden-frontend" target="_blank">
+Frontend GitHub
+</a>
+
 <br>
-<a href="https://github.com/Artesh7/for-hinanden-backend" target="_blank">Backend GitHub</a>
+
+<a href="https://github.com/Artesh7/for-hinanden-backend" target="_blank">
+Backend GitHub
+</a>
 
 </div>
 
@@ -148,8 +152,7 @@ asking for help while creating trust and meaningful local connections.
 <h3>Full Stack Dashboard</h3>
 
 <p>
-A web application built with .NET and Blazor for managing and visualizing
-data through an interactive dashboard.
+A web application built with .NET and Blazor for managing and visualizing data.
 </p>
 
 </div>
