@@ -26,6 +26,7 @@
 <header>
 
 <h1>Hi, I'm <span>Oumar Ammar</span></h1>
+  <img src="https://cdn.discordapp.com/attachments/710106604501991465/1481480405696774255/11z.jpg" alt="For Hinanden Screenshot" style="width:100%; border-radius:8px; margin-bottom:15px;">
 
 <p>Software Engineer | Data Engineering | Full Stack</p>
 
