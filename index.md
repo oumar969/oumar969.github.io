@@ -84,11 +84,23 @@ and working with modern technologies.
 
 <div class="project-card">
 
-<h3>Data Engineering Pipeline</h3>
+<h3>For Hinanden – Community Help Platform</h3>
 
-<p>ETL pipeline for processing and analyzing structured data.</p>
+<p>
+A digital platform designed to strengthen community support by connecting
+people who need help with volunteers in their local area.
+</p>
 
-<button>GitHub</button>
+<p>
+The project focuses on reducing social barriers that prevent people from
+asking for help while creating trust and meaningful local connections.
+</p>
+
+<p><strong>Tech:</strong> React, Node.js, Express, REST API, AWS</p>
+
+<a href="https://github.com/Zenbax/for-hinanden-frontend" target="_blank">Frontend GitHub</a>
+<br>
+<a href="https://github.com/Artesh7/for-hinanden-backend" target="_blank">Backend GitHub</a>
 
 </div>
 
@@ -97,9 +109,10 @@ and working with modern technologies.
 
 <h3>Full Stack Dashboard</h3>
 
-<p>Web application built with .NET and Blazor.</p>
-
-<button>GitHub</button>
+<p>
+A web application built with .NET and Blazor for managing and visualizing
+data through an interactive dashboard.
+</p>
 
 </div>
 
@@ -112,11 +125,11 @@ and working with modern technologies.
 
 <h2>Let's Connect</h2>
 
-<p>Email: oammar198@gmail.com</p>
+<p>Email: <a href="mailto:oammar198@gmail.com">oammar198@gmail.com</a></p>
 
 <p>
-<a href="https://github.com/oumar969">GitHub</a> |
-<a href="https://linkedin.com">LinkedIn</a>
+<a href="https://github.com/oumar969" target="_blank">GitHub</a> |
+<a href="https://linkedin.com" target="_blank">LinkedIn</a>
 </p>
 
 </section>
