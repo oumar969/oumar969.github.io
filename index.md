@@ -55,21 +55,59 @@ and working with modern technologies.
 
 <section id="skills">
 
-<h2>Skills</h2>
+<h2>Technical Skills</h2>
+
+<div class="skills-container">
+
+<div class="skills-category">
+
+<h3>💻 Programming</h3>
 
 <div class="skills-grid">
-
 <div class="skill">Java</div>
 <div class="skill">C#</div>
 <div class="skill">Python</div>
+</div>
+
+</div>
+
+
+<div class="skills-category">
+
+<h3>⚙️ Frameworks</h3>
+
+<div class="skills-grid">
 <div class="skill">.NET</div>
 <div class="skill">Blazor</div>
 <div class="skill">Spring Boot</div>
+</div>
+
+</div>
+
+
+<div class="skills-category">
+
+<h3>🗄 Databases & APIs</h3>
+
+<div class="skills-grid">
 <div class="skill">SQL</div>
 <div class="skill">GraphQL</div>
 <div class="skill">REST API</div>
+</div>
+
+</div>
+
+
+<div class="skills-category">
+
+<h3>🛠 Tools</h3>
+
+<div class="skills-grid">
 <div class="skill">Git</div>
 <div class="skill">Docker</div>
+</div>
+
+</div>
 
 </div>
 
