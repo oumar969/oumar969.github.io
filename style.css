@@ -70,6 +70,17 @@ nav a:hover{
 color:#38bdf8;
 }
 
+@media (max-width: 640px){
+.nav-inner{
+justify-content:center;
+}
+
+nav ul{
+width:100%;
+justify-content:center;
+}
+}
+
 
 /* HEADER */
 
@@ -199,6 +210,7 @@ section{
 max-width:var(--content-max);
 margin:0 auto;
 padding:80px var(--content-pad);
+scroll-margin-top:90px;
 }
 
 h2{
@@ -213,6 +225,18 @@ max-width:70ch;
 
 section p + p{
 margin-top:12px;
+}
+
+.about-meta{
+margin-top:18px;
+font-size:14px;
+opacity:0.85;
+}
+
+.meta{
+margin-top:10px;
+font-size:14px;
+opacity:0.85;
 }
 
 
@@ -283,6 +307,45 @@ text-decoration:none;
 
 .project-card a:hover{
 text-decoration:underline;
+}
+
+
+/* EXPERIENCE & EDUCATION */
+
+.experience-grid,
+.education-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.experience-card,
+.education-card{
+background:#1e293b;
+padding:25px;
+border-radius:10px;
+transition:0.3s;
+}
+
+.experience-card:hover,
+.education-card:hover{
+transform:translateY(-10px);
+}
+
+.experience-card h3,
+.education-card h3{
+margin-bottom:8px;
+}
+
+.experience-card ul,
+.education-card ul{
+margin-top:12px;
+padding-left:18px;
+}
+
+.experience-card li + li,
+.education-card li + li{
+margin-top:6px;
 }
 
 

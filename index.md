@@ -17,8 +17,10 @@
 
 <ul>
 <li><a href="#about">About</a></li>
+<li><a href="#experience">Experience</a></li>
 <li><a href="#skills">Skills</a></li>
 <li><a href="#projects">Projects</a></li>
+<li><a href="#education">Education</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 
@@ -39,7 +41,7 @@
 <div class="hero-actions">
 <a href="#projects" class="btn">View Projects</a>
 <a class="btn btn-secondary btn-sm" href="https://github.com/oumar969" target="_blank" rel="noopener noreferrer">GitHub</a>
-<a class="btn btn-secondary btn-sm" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+<a class="btn btn-secondary btn-sm" href="https://www.linkedin.com/in/omar-a-8a2491253/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
 <a class="btn btn-secondary btn-sm" href="#contact">Contact</a>
 </div>
 
@@ -58,14 +60,54 @@
 <h2>About Me</h2>
 
 <p>
-I'm a software engineer from VIA University College specializing in
-data engineering and full-stack development.
+Newly graduated Software Engineer (Data Engineering) from VIA University College.
+I enjoy building data-driven and full-stack solutions and turning complex problems
+into robust, maintainable systems.
 </p>
 
 <p>
-I enjoy building scalable systems, solving complex problems,
-and working with modern technologies.
+During my internship at TinyMobileRobots, I worked in an international team on
+frontend tasks, designing and implementing customer-specific sports-field templates
+using JavaScript and Cordova.
 </p>
+
+<p class="about-meta"><strong>Languages:</strong> Danish (fluent) · English (fluent) · Arabic (native)</p>
+
+</section>
+
+<section id="experience">
+
+<h2>Experience</h2>
+
+<div class="experience-grid">
+
+<div class="experience-card">
+
+<h3>Frontend Developer Intern • TinyMobileRobots</h3>
+
+<p class="meta"><strong>2024–2025</strong></p>
+
+<ul>
+<li>Worked in an international team, focusing on frontend development.</li>
+<li>Designed and implemented customer-specific sports-field templates.</li>
+<li><strong>Tech:</strong> JavaScript, Cordova</li>
+</ul>
+
+</div>
+
+<div class="experience-card">
+
+<h3>Other Experience</h3>
+
+<ul>
+<li><strong>Temp worker (2019–2025):</strong> Worked under pressure, quick onboarding, and teamwork in diverse environments.</li>
+<li><strong>Volunteer:</strong> Fundraising collector for the Danish Refugee Council.</li>
+<li><strong>Cleaning assistant (2018–2019):</strong> Hotel operations support (cleaning, dishwashing, outdoor work, serving).</li>
+</ul>
+
+</div>
+
+</div>
 
 </section>
 
@@ -83,6 +125,7 @@ and working with modern technologies.
 <div class="skill">Java</div>
 <div class="skill">C#</div>
 <div class="skill">Python</div>
+<div class="skill">JavaScript</div>
 </div>
 
 </div>
@@ -95,6 +138,7 @@ and working with modern technologies.
 <div class="skill">.NET</div>
 <div class="skill">Blazor</div>
 <div class="skill">Spring Boot</div>
+<div class="skill">Cordova</div>
 </div>
 
 </div>
@@ -105,8 +149,10 @@ and working with modern technologies.
 
 <div class="skills-grid">
 <div class="skill">SQL</div>
+<div class="skill">SQLite</div>
 <div class="skill">GraphQL</div>
 <div class="skill">REST API</div>
+<div class="skill">gRPC</div>
 </div>
 
 </div>
@@ -117,7 +163,10 @@ and working with modern technologies.
 
 <div class="skills-grid">
 <div class="skill">Git</div>
+<div class="skill">GitHub</div>
 <div class="skill">Docker</div>
+<div class="skill">Jira</div>
+<div class="skill">Power BI</div>
 </div>
 
 </div>
@@ -143,13 +192,13 @@ who need help with volunteers willing to assist.
 
 <p><strong>Tech:</strong> React, Node.js, Express, REST API, AWS</p>
 
-<a href="https://github.com/Zenbax/for-hinanden-frontend" target="_blank">
+<a href="https://github.com/Zenbax/for-hinanden-frontend" target="_blank" rel="noopener noreferrer">
 Frontend GitHub
 </a>
 
 <br>
 
-<a href="https://github.com/Artesh7/for-hinanden-backend" target="_blank">
+<a href="https://github.com/Artesh7/for-hinanden-backend" target="_blank" rel="noopener noreferrer">
 Backend GitHub
 </a>
 
@@ -179,6 +228,45 @@ Kommer snart
 
 </section>
 
+<section id="education">
+
+<h2>Education</h2>
+
+<div class="education-grid">
+
+<div class="education-card">
+
+<h3>BEng, Software Technology (Data Engineering) • VIA University College</h3>
+
+<p class="meta"><strong>Aug 2022 – Jan 2026</strong> • Horsens</p>
+
+<ul>
+<li>Completed 6 semester projects.</li>
+<li>Selected coursework: Algorithms & Data Structures, Databases, DevOps & Cloud, Networks & Security, Design Patterns, Web Development.</li>
+</ul>
+
+</div>
+
+<div class="education-card">
+
+<h3>Engineering Access Course • VIA University College</h3>
+
+<p class="meta"><strong>Aug 2021 – Jun 2022</strong> • Mathematics A</p>
+
+</div>
+
+<div class="education-card">
+
+<h3>Higher Preparatory Examination (HF) • HF & VUC NORD</h3>
+
+<p class="meta"><strong>2018 – 2021</strong></p>
+
+</div>
+
+</div>
+
+</section>
+
 <section id="contact">
 
 <h2>Let's Connect</h2>
@@ -186,8 +274,8 @@ Kommer snart
 <p>Email: <a href="mailto:oammar198@gmail.com">oammar198@gmail.com</a></p>
 
 <p>
-<a href="https://github.com/oumar969" target="_blank">GitHub</a> |
-<a href="https://linkedin.com" target="_blank">LinkedIn</a>
+<a href="https://github.com/oumar969" target="_blank" rel="noopener noreferrer">GitHub</a> |
+<a href="https://www.linkedin.com/in/omar-a-8a2491253/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
 </p>
 
 </section>
