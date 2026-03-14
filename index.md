@@ -11,6 +11,8 @@
 
 <nav>
 
+<div class="nav-inner">
+
 <div class="logo">Oumar.dev</div>
 
 <ul>
@@ -20,20 +22,36 @@
 <li><a href="#contact">Contact</a></li>
 </ul>
 
-</nav>
+</div>
 
+</nav>
 
 <header>
 
+<div class="hero">
+
+<div class="hero-copy">
+
 <h1>Hi, I'm <span>Oumar Ammar</span></h1>
-  <img src="https://cdn.discordapp.com/attachments/710106604501991465/1481480405696774255/11z.jpg" alt="For Hinanden Screenshot" style="width:100%; border-radius:8px; margin-bottom:15px;">
 
-<p>Software Engineer | Data Engineering | Full Stack</p>
+<p class="hero-subtitle">Software Engineer | Data Engineering | Full Stack</p>
 
+<div class="hero-actions">
 <a href="#projects" class="btn">View Projects</a>
+<a class="btn btn-secondary btn-sm" href="https://github.com/oumar969" target="_blank" rel="noopener noreferrer">GitHub</a>
+<a class="btn btn-secondary btn-sm" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+<a class="btn btn-secondary btn-sm" href="#contact">Contact</a>
+</div>
+
+</div>
+
+<div class="hero-media">
+<img class="hero-avatar" src="https://media.discordapp.net/attachments/710106604501991465/1481480405696774255/11z.jpg?ex=69b571e5&is=69b42065&hm=63d9977bf0b42db36d2d1575ce1668d8dc7612d02ad5cd95a136d091b1d7cb36&=&format=webp&width=598&height=856" alt="Portrait of Oumar Ammar">
+</div>
+
+</div>
 
 </header>
-
 
 <section id="about">
 
@@ -50,7 +68,6 @@ and working with modern technologies.
 </p>
 
 </section>
-
 
 <section id="skills">
 
@@ -70,7 +87,6 @@ and working with modern technologies.
 
 </div>
 
-
 <div class="skills-category">
 
 <h3>⚙️ Frameworks</h3>
@@ -83,7 +99,6 @@ and working with modern technologies.
 
 </div>
 
-
 <div class="skills-category">
 
 <h3>🗄 Databases & APIs</h3>
@@ -95,7 +110,6 @@ and working with modern technologies.
 </div>
 
 </div>
-
 
 <div class="skills-category">
 
@@ -111,7 +125,6 @@ and working with modern technologies.
 </div>
 
 </section>
-
 
 <section id="projects">
 
@@ -142,7 +155,6 @@ Backend GitHub
 
 </div>
 
-
 <div class="project-card">
 
 <h3>Full Stack Dashboard</h3>
@@ -163,11 +175,9 @@ Kommer snart
 
 </div>
 
-
 </div>
 
 </section>
-
 
 <section id="contact">
 
@@ -182,10 +192,13 @@ Kommer snart
 
 </section>
 
-
 <footer>
 
+<div class="footer-inner">
+
 <p>© 2025 Oumar Ammar</p>
+
+</div>
 
 </footer>
 
