@@ -39,9 +39,11 @@ const translations = {
 		"skills.title": "Technical Skills",
 		"skills.cat.programming": "Programming",
 		"skills.cat.frameworks": "Frameworks",
-		"skills.cat.databases": "Databases & APIs",
+		"skills.cat.databases": "Databases",
+		"skills.cat.apis": "APIs",
 		"skills.cat.tools": "Tools",
 		"skills.cat.architecture": "Architecture",
+		"skills.cat.fullstack": "Full Stack",
 
 		"projects.title": "Projects",
 		"projects.forhinanden.desc":
@@ -105,9 +107,11 @@ const translations = {
 		"skills.title": "Tekniske kompetencer",
 		"skills.cat.programming": "Programmering",
 		"skills.cat.frameworks": "Frameworks",
-		"skills.cat.databases": "Databaser & API'er",
+		"skills.cat.databases": "Databaser",
+		"skills.cat.apis": "API'er",
 		"skills.cat.tools": "Værktøjer",
 		"skills.cat.architecture": "Arkitektur",
+		"skills.cat.fullstack": "Full Stack",
 
 		"projects.title": "Projekter",
 		"projects.forhinanden.desc":
@@ -181,7 +185,48 @@ function setupLanguageSwitch() {
 	});
 }
 
+function setupLanguageItems() {
+	const langItems = document.querySelectorAll('.lang-item');
+	langItems.forEach(item => {
+		item.addEventListener('click', function() {
+			const flagEl = this.querySelector('.flag');
+			
+			// Add click animation
+			flagEl.style.animation = 'none';
+			setTimeout(() => {
+				flagEl.style.animation = '';
+			}, 10);
+			
+			// Show tooltip with language name
+			const langName = this.getAttribute('title');
+			const tooltip = document.createElement('div');
+			tooltip.textContent = langName;
+			tooltip.style.cssText = `
+				position: fixed;
+				background: var(--gradient-primary);
+				color: black;
+				padding: 6px 12px;
+				border-radius: 6px;
+				font-size: 12px;
+				font-weight: 600;
+				pointer-events: none;
+				z-index: 1000;
+				animation: tooltipFade 0.6s ease-in-out;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+			`;
+			document.body.appendChild(tooltip);
+			
+			setTimeout(() => {
+				tooltip.remove();
+			}, 600);
+		});
+	});
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 	setupLanguageSwitch();
+	setupLanguageItems();
 	applyLanguage(getInitialLanguage());
 });
