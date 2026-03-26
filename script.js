@@ -225,7 +225,42 @@ function setupLanguageItems() {
 	});
 }
 
+function getInitialTheme() {
+	const stored = localStorage.getItem("theme");
+	if (stored && (stored === "light" || stored === "dark")) return stored;
+	
+	// Check system preference
+	if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
+		return "light";
+	}
+	return "dark";
+}
+
+function applyTheme(theme) {
+	if (theme === "light") {
+		document.body.classList.add("light-mode");
+		localStorage.setItem("theme", "light");
+		document.getElementById("theme-toggle").innerHTML = '<i class="fas fa-sun"></i>';
+	} else {
+		document.body.classList.remove("light-mode");
+		localStorage.setItem("theme", "dark");
+		document.getElementById("theme-toggle").innerHTML = '<i class="fas fa-moon"></i>';
+	}
+}
+
+function setupThemeToggle() {
+	const themeBtn = document.getElementById("theme-toggle");
+	if (!themeBtn) return;
+	
+	themeBtn.addEventListener("click", () => {
+		const isDark = document.body.classList.contains("light-mode");
+		applyTheme(isDark ? "dark" : "light");
+	});
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+	setupThemeToggle();
+	applyTheme(getInitialTheme());
 	setupLanguageSwitch();
 	setupLanguageItems();
 	applyLanguage(getInitialLanguage());
