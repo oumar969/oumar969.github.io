@@ -135,7 +135,7 @@ const translations = {
 
 		"about.title": "Om mig",
 		"about.p1": "Nyuddannet softwareingeniør (Data Engineering) fra VIA University College. Jeg kan lide at bygge datadrevne og full-stack løsninger og omsætte komplekse problemstillinger til robuste, vedligeholdelsesvenlige systemer.",
-		"about.p2": "Under min praktik hos TinyMobileRobots arbejdede jeg i et internationalt team med frontend-opgaver, hvor jeg designede og implementerede kundespecifikke sportstemplates ved hjælp af JavaScript og Cordova.",
+		"about.p2": "Under min praktik hos TinyMobileRobots arbejdede jeg i et internationalt team med frontend-opgaver, hvor jeg designede og implementerede kundespecifikke sportstemplates ved at bruge JavaScript og Cordova.",
 		"about.p3": "Jeg er passioneret omkring rent kode, systemarkitektur og at skabe løsninger, der skalerer. Min erfaring spænder over backend-udvikling, frontend-grænseflader og realtids-kommunikationssystemer. Jeg trives i samarbejdsbaserede miljøer og er altid ivrig efter at lære nye teknologier.",
 		"label.languages": "Sprog:",
 
