@@ -978,59 +978,98 @@ transform:translateX(4px);
 position:relative;
 }
 
-.contact-cta{
-margin:30px 0;
+.contact-intro{
+font-size:16px;
+opacity:0.8;
+margin-bottom:36px;
+max-width:520px;
+}
+
+.contact-cards{
 display:flex;
-justify-content:center;
+flex-direction:column;
+gap:14px;
+max-width:520px;
+}
+
+.contact-card{
+display:flex;
 align-items:center;
-}
-
-.contact-methods{
-background:linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(56, 189, 248, 0.05) 100%);
-padding:25px;
-border-radius:12px;
-border:1px solid rgba(56, 189, 248, 0.2);
-margin-top:20px;
-}
-
-body.light-mode .contact-methods {
-background:linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(56, 189, 248, 0.03) 100%);
-border-color:rgba(56, 189, 248, 0.3);
-}
-
-.contact-methods p{
-margin-bottom:12px;
-}
-
-.contact-methods p:last-child{
-margin-bottom:0;
-}
-
-#contact a{
-color:#38bdf8;
+gap:18px;
+padding:20px 24px;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(56,189,248,0.18);
+border-radius:14px;
 text-decoration:none;
+color:inherit;
+transition:background 0.2s,border-color 0.2s,transform 0.2s,box-shadow 0.2s;
+}
+
+.contact-card:hover{
+background:rgba(56,189,248,0.08);
+border-color:rgba(56,189,248,0.45);
+transform:translateX(6px);
+box-shadow:0 4px 20px rgba(56,189,248,0.12);
+}
+
+.contact-card-icon{
+width:44px;
+height:44px;
+border-radius:10px;
+background:rgba(56,189,248,0.12);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:18px;
+color:#38bdf8;
+flex-shrink:0;
+}
+
+.contact-card-text{
+display:flex;
+flex-direction:column;
+gap:3px;
+flex:1;
+}
+
+.contact-card-label{
+font-size:12px;
+text-transform:uppercase;
+letter-spacing:0.08em;
+opacity:0.5;
 font-weight:600;
-transition:all 0.3s ease;
-position:relative;
 }
 
-#contact a::after{
-content:'';
-position:absolute;
-bottom:-2px;
-left:0;
-width:0;
-height:2px;
-background:var(--gradient-primary);
-transition:width 0.3s ease;
+.contact-card-value{
+font-size:15px;
+font-weight:500;
+color:#38bdf8;
 }
 
-#contact a:hover{
+.contact-card-arrow{
+opacity:0.3;
+font-size:14px;
+transition:opacity 0.2s,transform 0.2s;
+}
+
+.contact-card:hover .contact-card-arrow{
+opacity:0.8;
+transform:translateX(4px);
+}
+
+body.light-mode .contact-card{
+background:rgba(0,0,0,0.03);
+border-color:rgba(14,165,233,0.2);
+color:#0f172a;
+}
+
+body.light-mode .contact-card:hover{
+background:rgba(14,165,233,0.08);
+border-color:rgba(14,165,233,0.4);
+}
+
+body.light-mode .contact-card-value{
 color:#0ea5e9;
-}
-
-#contact a:hover::after{
-width:100%;
 }
 
 /* LIGHT MODE STYLES */
