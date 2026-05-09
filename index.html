@@ -275,7 +275,7 @@ A digital platform designed to connect people in local communities
 who need help with volunteers willing to assist.
 </p>
 
-<button class="screenshots-btn" onclick="openLightbox(0)">
+<button class="screenshots-btn" id="open-lightbox-btn">
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
 Se app-skærmbilleder
 </button>
@@ -617,18 +617,18 @@ GitHub Repository
 
 </footer>
 
-<div id="lightbox" class="lightbox" onclick="closeLightboxOutside(event)">
-  <button class="lb-close" onclick="closeLightbox()">&#x2715;</button>
-  <button class="lb-arrow lb-prev" onclick="shiftSlide(-1)">&#8249;</button>
+<div id="lightbox" class="lightbox">
+  <button class="lb-close" id="lb-close">&#x2715;</button>
+  <button class="lb-arrow lb-prev" id="lb-prev">&#8249;</button>
   <div class="lb-content">
     <img id="lb-img" src="" alt="">
     <div class="lb-thumbs">
-      <img src="forhinanden-1.png" onclick="goToSlide(0)" class="lb-thumb">
-      <img src="forhinanden-2.png" onclick="goToSlide(1)" class="lb-thumb">
-      <img src="forhinanden-3.png" onclick="goToSlide(2)" class="lb-thumb">
+      <img src="forhinanden-1.png" class="lb-thumb" data-index="0">
+      <img src="forhinanden-2.png" class="lb-thumb" data-index="1">
+      <img src="forhinanden-3.png" class="lb-thumb" data-index="2">
     </div>
   </div>
-  <button class="lb-arrow lb-next" onclick="shiftSlide(1)">&#8250;</button>
+  <button class="lb-arrow lb-next" id="lb-next">&#8250;</button>
 </div>
 
 <script src="script.js"></script>

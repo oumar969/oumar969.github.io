@@ -372,56 +372,63 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Lightbox
-const lbImages = [
-	{ src: "forhinanden-1.png", alt: "For Hinanden – feed og opgaver" },
-	{ src: "forhinanden-2.png", alt: "For Hinanden – beskeder og profil" },
-	{ src: "forhinanden-3.png", alt: "For Hinanden – anmeldelser og hjælpere" },
-];
-let lbCurrent = 0;
+document.addEventListener("DOMContentLoaded", () => {
+	const lbImages = [
+		{ src: "forhinanden-1.png", alt: "For Hinanden – feed og opgaver" },
+		{ src: "forhinanden-2.png", alt: "For Hinanden – beskeder og profil" },
+		{ src: "forhinanden-3.png", alt: "For Hinanden – anmeldelser og hjælpere" },
+	];
+	let lbCurrent = 0;
 
-function openLightbox(index) {
-	lbCurrent = index;
-	document.getElementById("lightbox").classList.add("open");
-	document.body.style.overflow = "hidden";
-	updateLightbox();
-}
+	const lightbox = document.getElementById("lightbox");
+	const lbImg = document.getElementById("lb-img");
 
-function closeLightbox() {
-	document.getElementById("lightbox").classList.remove("open");
-	document.body.style.overflow = "";
-}
+	function openLightbox(index) {
+		lbCurrent = index;
+		lightbox.classList.add("open");
+		document.body.style.overflow = "hidden";
+		updateLightbox();
+	}
 
-function closeLightboxOutside(e) {
-	if (e.target === document.getElementById("lightbox")) closeLightbox();
-}
+	function closeLightbox() {
+		lightbox.classList.remove("open");
+		document.body.style.overflow = "";
+	}
 
-function shiftSlide(dir) {
-	lbCurrent = (lbCurrent + dir + lbImages.length) % lbImages.length;
-	updateLightbox();
-}
+	function shiftSlide(dir) {
+		lbCurrent = (lbCurrent + dir + lbImages.length) % lbImages.length;
+		updateLightbox();
+	}
 
-function goToSlide(index) {
-	lbCurrent = index;
-	updateLightbox();
-}
+	function updateLightbox() {
+		lbImg.style.opacity = "0";
+		setTimeout(() => {
+			lbImg.src = lbImages[lbCurrent].src;
+			lbImg.alt = lbImages[lbCurrent].alt;
+			lbImg.style.opacity = "1";
+		}, 100);
+		document.querySelectorAll(".lb-thumb").forEach((t, i) => {
+			t.classList.toggle("active", i === lbCurrent);
+		});
+	}
 
-function updateLightbox() {
-	const img = document.getElementById("lb-img");
-	img.style.opacity = "0";
-	setTimeout(() => {
-		img.src = lbImages[lbCurrent].src;
-		img.alt = lbImages[lbCurrent].alt;
-		img.style.opacity = "1";
-	}, 100);
-	document.querySelectorAll(".lb-thumb").forEach((t, i) => {
-		t.classList.toggle("active", i === lbCurrent);
+	document.getElementById("open-lightbox-btn").addEventListener("click", () => openLightbox(0));
+	document.getElementById("lb-close").addEventListener("click", closeLightbox);
+	document.getElementById("lb-prev").addEventListener("click", () => shiftSlide(-1));
+	document.getElementById("lb-next").addEventListener("click", () => shiftSlide(1));
+
+	lightbox.addEventListener("click", (e) => {
+		if (e.target === lightbox) closeLightbox();
 	});
-}
 
-document.addEventListener("keydown", (e) => {
-	const lb = document.getElementById("lightbox");
-	if (!lb.classList.contains("open")) return;
-	if (e.key === "Escape") closeLightbox();
-	if (e.key === "ArrowRight") shiftSlide(1);
-	if (e.key === "ArrowLeft") shiftSlide(-1);
+	document.querySelectorAll(".lb-thumb").forEach((thumb) => {
+		thumb.addEventListener("click", () => openLightbox(+thumb.dataset.index));
+	});
+
+	document.addEventListener("keydown", (e) => {
+		if (!lightbox.classList.contains("open")) return;
+		if (e.key === "Escape") closeLightbox();
+		if (e.key === "ArrowRight") shiftSlide(1);
+		if (e.key === "ArrowLeft") shiftSlide(-1);
+	});
 });
