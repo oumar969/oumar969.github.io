@@ -697,25 +697,127 @@ font-size:13px;
 border-left:3px solid rgba(56, 189, 248, 0.3);
 }
 
-.project-screenshots{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:10px;
+.screenshots-btn{
+display:inline-flex;
+align-items:center;
+gap:8px;
 margin:15px 0;
-}
-
-.project-screenshots img{
-width:100%;
-border-radius:10px;
-object-fit:cover;
-aspect-ratio:3/5;
+padding:10px 20px;
+background:rgba(56,189,248,0.12);
+border:1px solid rgba(56,189,248,0.4);
+border-radius:8px;
+color:#38bdf8;
+font-size:14px;
+font-weight:500;
 cursor:pointer;
-transition:transform 0.2s ease,box-shadow 0.2s ease;
+transition:background 0.2s,transform 0.2s,box-shadow 0.2s;
 }
 
-.project-screenshots img:hover{
-transform:scale(1.03);
-box-shadow:0 8px 24px rgba(0,0,0,0.4);
+.screenshots-btn:hover{
+background:rgba(56,189,248,0.22);
+transform:translateY(-2px);
+box-shadow:0 6px 20px rgba(56,189,248,0.2);
+}
+
+/* Lightbox */
+.lightbox{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.92);
+z-index:9999;
+align-items:center;
+justify-content:center;
+gap:16px;
+backdrop-filter:blur(6px);
+}
+
+.lightbox.open{
+display:flex;
+}
+
+.lb-content{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:16px;
+max-height:90vh;
+}
+
+#lb-img{
+max-height:72vh;
+max-width:88vw;
+border-radius:14px;
+box-shadow:0 20px 60px rgba(0,0,0,0.7);
+object-fit:contain;
+transition:opacity 0.2s ease;
+}
+
+.lb-thumbs{
+display:flex;
+gap:10px;
+}
+
+.lb-thumb{
+width:64px;
+height:110px;
+object-fit:cover;
+border-radius:8px;
+cursor:pointer;
+opacity:0.5;
+border:2px solid transparent;
+transition:opacity 0.2s,border-color 0.2s,transform 0.2s;
+}
+
+.lb-thumb:hover{
+opacity:0.8;
+transform:scale(1.05);
+}
+
+.lb-thumb.active{
+opacity:1;
+border-color:#38bdf8;
+}
+
+.lb-arrow{
+background:rgba(255,255,255,0.1);
+border:none;
+color:#fff;
+font-size:2.8rem;
+width:52px;
+height:52px;
+border-radius:50%;
+cursor:pointer;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:background 0.2s,transform 0.2s;
+flex-shrink:0;
+}
+
+.lb-arrow:hover{
+background:rgba(56,189,248,0.3);
+transform:scale(1.1);
+}
+
+.lb-close{
+position:fixed;
+top:20px;
+right:24px;
+background:rgba(255,255,255,0.1);
+border:none;
+color:#fff;
+font-size:1.4rem;
+width:42px;
+height:42px;
+border-radius:50%;
+cursor:pointer;
+transition:background 0.2s;
+z-index:10000;
+}
+
+.lb-close:hover{
+background:rgba(239,68,68,0.5);
 }
 
 .project-image{

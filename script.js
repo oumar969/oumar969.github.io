@@ -370,3 +370,58 @@ document.addEventListener("DOMContentLoaded", () => {
 	setupLanguageItems();
 	applyLanguage(getInitialLanguage());
 });
+
+// Lightbox
+const lbImages = [
+	{ src: "forhinanden-1.png", alt: "For Hinanden – feed og opgaver" },
+	{ src: "forhinanden-2.png", alt: "For Hinanden – beskeder og profil" },
+	{ src: "forhinanden-3.png", alt: "For Hinanden – anmeldelser og hjælpere" },
+];
+let lbCurrent = 0;
+
+function openLightbox(index) {
+	lbCurrent = index;
+	document.getElementById("lightbox").classList.add("open");
+	document.body.style.overflow = "hidden";
+	updateLightbox();
+}
+
+function closeLightbox() {
+	document.getElementById("lightbox").classList.remove("open");
+	document.body.style.overflow = "";
+}
+
+function closeLightboxOutside(e) {
+	if (e.target === document.getElementById("lightbox")) closeLightbox();
+}
+
+function shiftSlide(dir) {
+	lbCurrent = (lbCurrent + dir + lbImages.length) % lbImages.length;
+	updateLightbox();
+}
+
+function goToSlide(index) {
+	lbCurrent = index;
+	updateLightbox();
+}
+
+function updateLightbox() {
+	const img = document.getElementById("lb-img");
+	img.style.opacity = "0";
+	setTimeout(() => {
+		img.src = lbImages[lbCurrent].src;
+		img.alt = lbImages[lbCurrent].alt;
+		img.style.opacity = "1";
+	}, 100);
+	document.querySelectorAll(".lb-thumb").forEach((t, i) => {
+		t.classList.toggle("active", i === lbCurrent);
+	});
+}
+
+document.addEventListener("keydown", (e) => {
+	const lb = document.getElementById("lightbox");
+	if (!lb.classList.contains("open")) return;
+	if (e.key === "Escape") closeLightbox();
+	if (e.key === "ArrowRight") shiftSlide(1);
+	if (e.key === "ArrowLeft") shiftSlide(-1);
+});
