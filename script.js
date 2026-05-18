@@ -52,6 +52,9 @@ const translations = {
 		"projects.amazirian.frontend": "React + TypeScript · Vite · GitHub Pages deployment",
 		"projects.amazirian.mobile": "Flutter · iOS & Android · Web support",
 		"projects.amazirian.tech": "React, TypeScript, Flutter, Node.js, SQLite, REST API, JWT Auth",
+		"projects.rentop.desc": "Full-stack web application built for a cleaning company in Horsens. Covers everything from a user-facing website to a complete admin system with booking, invoicing and analytics.",
+		"projects.rentop.features": "Online booking with confirmation emails · Admin panel with calendar & statistics · Automatic PDF invoice generation · Gift card system · Newsletter · Review system · Loyalty program · GDPR cookie policy",
+
 		"projects.forhinanden.title": "For Hinanden – Community Help Platform",
 		"projects.forhinanden.desc": "A digital platform designed to connect people in local communities who need help with volunteers willing to assist.",
 		"projects.forhinanden.features": "User authentication · Real-time notifications · Location-based matching · Request management",
@@ -174,6 +177,9 @@ const translations = {
 		"projects.amazirian.mobile": "Flutter · iOS & Android · Web-support",
 		"projects.amazirian.tech": "React, TypeScript, Flutter, Node.js, SQLite, REST API, JWT Auth",
 		"projects.forhinanden.title": "For Hinanden – Community Help Platform",
+		"projects.rentop.desc": "Fuld-stack webapplikation bygget til en rengøringsvirksomhed i Horsens. Dækker alt fra brugervendt hjemmeside til komplet admin-system med booking, fakturering og analyser.",
+		"projects.rentop.features": "Online booking med bekræftelsesmails · Admin-panel med kalender og statistik · Automatisk fakturagenering som PDF · Gavekortssystem · Nyhedsbrev · Anmeldelsessystem · Loyalitetsprogram · GDPR cookiepolitik",
+
 		"projects.forhinanden.desc": "En digital platform designet til at forbinde mennesker i lokalsamfund, som har brug for hjælp, med frivillige der kan assistere.",
 		"projects.forhinanden.features": "Brugerautentificering · Realtids-notifikationer · Lokationsbaseret matching · Anmodningsadministration",
 		"projects.forhinanden.tech": "React, Node.js, Express, REST API, AWS",
