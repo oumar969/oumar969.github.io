@@ -287,6 +287,98 @@ Full-stack web application built for a cleaning company in Horsens. Covers every
 </div>
 
 </div>
+<div class="project-card featured">
+
+  <div class="project-badge">Personal Project</div>
+
+  <h3>Lumo – Privat Kreativ Samarbejdsapp</h3>
+
+  <p>
+    Lumo er en realtime mobil-app til privat visuel kommunikation. Tegn, skriv noter og del idéer med mennesker der betyder noget — uden social media-støj. Bygget fra bunden med React Native, Firebase og en Node.js backend på Vercel.
+  </p>
+
+  <button class="screenshots-btn" id="open-lumo-lightbox-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    Se app-skærmbilleder
+  </button>
+
+  <div class="project-details">
+    <p><strong>Features:</strong> Fælles tegne-canvas med realtime sync · Emoji-klistermærker, billeder &amp; GIFs på canvas · Fælles noter med Firebase realtime · Shared Spaces med invite-koder · Online presence (grøn prik) · Live cursors under tegning · Glassmorphism navigation · Profil med bio, brugernavn &amp; statistik · MVC arkitektur</p>
+    <p><strong>Tech:</strong> React Native (Expo SDK 54) · Firebase Realtime Database · Firebase Auth · Node.js (Vercel Serverless) · Turso (libSQL/SQLite edge) · React Navigation · Giphy API</p>
+    <p><strong>Arkitektur:</strong> MVC · Context API · Service layer · Realtime event-driven sync</p>
+  </div>
+
+  <div class="project-links">
+    <a href="https://github.com/oumar969/Lumo" target="_blank" rel="noopener noreferrer">
+      Backend Code
+    </a>
+    <a href="https://github.com/oumar969/Lumo-app" target="_blank" rel="noopener noreferrer">
+      Frontend Code
+    </a>
+  </div>
+
+</div>
+
+<!-- Lumo Lightbox -->
+<div id="lumo-lightbox" class="lightbox" style="display:none;">
+  <button class="lb-close" id="lumo-lb-close">&#x2715;</button>
+  <button class="lb-arrow lb-prev" id="lumo-lb-prev">&#8249;</button>
+  <div class="lb-content">
+    <img id="lumo-lb-img" src="lumo-screenshots/lumo-home.png" alt="Lumo screenshot">
+    <div class="lb-thumbs">
+      <img src="lumo-screenshots/lumo-home.png" class="lb-thumb lumo-thumb" data-index="0" alt="Hjem">
+      <img src="lumo-screenshots/lumo-canvas.png" class="lb-thumb lumo-thumb" data-index="1" alt="Canvas">
+      <img src="lumo-screenshots/lumo-stickers.png" class="lb-thumb lumo-thumb" data-index="2" alt="Stickers">
+      <img src="lumo-screenshots/lumo-notes.png" class="lb-thumb lumo-thumb" data-index="3" alt="Noter">
+      <img src="lumo-screenshots/lumo-profile.png" class="lb-thumb lumo-thumb" data-index="4" alt="Profil">
+      <img src="lumo-screenshots/lumo-create.png" class="lb-thumb lumo-thumb" data-index="5" alt="Opret Space">
+      <img src="lumo-screenshots/lumo-join.png" class="lb-thumb lumo-thumb" data-index="6" alt="Join Space">
+      <img src="lumo-screenshots/lumo-toolbar.png" class="lb-thumb lumo-thumb" data-index="7" alt="Toolbar">
+    </div>
+  </div>
+  <button class="lb-arrow lb-next" id="lumo-lb-next">&#8250;</button>
+</div>
+
+<script>
+(function() {
+  const imgs = [
+    'lumo-screenshots/lumo-home.png',
+    'lumo-screenshots/lumo-canvas.png',
+    'lumo-screenshots/lumo-stickers.png',
+    'lumo-screenshots/lumo-notes.png',
+    'lumo-screenshots/lumo-profile.png',
+    'lumo-screenshots/lumo-create.png',
+    'lumo-screenshots/lumo-join.png',
+    'lumo-screenshots/lumo-toolbar.png',
+  ];
+  let current = 0;
+  const lb = document.getElementById('lumo-lightbox');
+  const lbImg = document.getElementById('lumo-lb-img');
+  const thumbs = document.querySelectorAll('.lumo-thumb');
+
+  function show(i) {
+    current = i;
+    lbImg.src = imgs[i];
+    thumbs.forEach((t, idx) => t.style.opacity = idx === i ? '1' : '0.5');
+  }
+
+  document.getElementById('open-lumo-lightbox-btn').addEventListener('click', () => {
+    lb.style.display = 'flex';
+    show(0);
+  });
+  document.getElementById('lumo-lb-close').addEventListener('click', () => {
+    lb.style.display = 'none';
+  });
+  document.getElementById('lumo-lb-prev').addEventListener('click', () => {
+    show((current - 1 + imgs.length) % imgs.length);
+  });
+  document.getElementById('lumo-lb-next').addEventListener('click', () => {
+    show((current + 1) % imgs.length);
+  });
+  thumbs.forEach((t, i) => t.addEventListener('click', () => show(i)));
+  lb.addEventListener('click', (e) => { if (e.target === lb) lb.style.display = 'none'; });
+})();
+</script>
 
 <div class="project-card featured">
 
