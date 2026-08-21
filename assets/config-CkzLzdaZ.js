@@ -45,7 +45,7 @@ const e = {
       title: "NordicFlow",
       category: "Cloud Data Platform / Learning Project",
       technologies: ".NET, React, Azure, Databricks, PySpark, PostgreSQL, Terraform, Docker, GitHub Actions",
-      image: "/images/nordicflow-dashboard.png",
+      image: "/images/nordicflow-overview.png",
       description: "A hands-on supply-chain intelligence platform I am building to learn Azure and Databricks in practice. It explores secure event ingestion, medallion data pipelines, observability, infrastructure as code and an authenticated operations dashboard.",
       link: "/nordicflow.html"
     },
