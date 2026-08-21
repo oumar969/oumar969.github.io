@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="NordicFlow — a hands-on Azure and Databricks learning project by Oumar Ammar." />
+    <title>NordicFlow | Oumar Ammar</title>
+    <link rel="stylesheet" href="/assets/nordicflow-gallery.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">OA</a>
+      <a class="back-link" href="/">← Back to portfolio</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Cloud data platform · Learning project</p>
+        <h1>NordicFlow</h1>
+        <p class="intro">
+          A hands-on supply-chain intelligence platform I am building to learn Azure and Databricks in practice.
+          The project explores secure event ingestion, medallion data pipelines, observability, infrastructure as
+          code and an authenticated operations dashboard.
+        </p>
+        <div class="actions">
+          <a class="primary-button" href="https://github.com/oumar969/NordicFlow" target="_blank" rel="noreferrer">View source on GitHub ↗</a>
+          <a class="secondary-button" href="#screenshots">View screenshots</a>
+        </div>
+      </section>
+
+      <section class="stack" aria-labelledby="stack-title">
+        <p class="eyebrow">Technology stack</p>
+        <h2 id="stack-title">Built across the full data journey</h2>
+        <div class="tags" aria-label="NordicFlow technologies">
+          <span>.NET API</span><span>React</span><span>Azure</span><span>Event Hubs</span>
+          <span>Databricks</span><span>PySpark</span><span>Delta Lake</span><span>PostgreSQL</span>
+          <span>Terraform</span><span>Docker</span><span>GitHub Actions</span><span>OpenTelemetry</span>
+        </div>
+      </section>
+
+      <section class="gallery-section" id="screenshots" aria-labelledby="gallery-title">
+        <p class="eyebrow">Project gallery</p>
+        <h2 id="gallery-title">From dashboard to cloud deployment</h2>
+        <p class="gallery-help">Select any screenshot to view it in full size.</p>
+
+        <div class="gallery">
+          <button class="gallery-card" data-index="0" type="button">
+            <img src="/images/nordicflow-dashboard.png" alt="NordicFlow control tower dashboard" />
+            <span><strong>Control tower</strong><small>React dashboard for orders, inventory, predictions and operations.</small></span>
+          </button>
+          <button class="gallery-card" data-index="1" type="button">
+            <img src="/images/nordicflow-ci.png" alt="Successful NordicFlow GitHub Actions deployment" />
+            <span><strong>Automated delivery</strong><small>Application tests, Terraform validation and Databricks deployment in GitHub Actions.</small></span>
+          </button>
+          <button class="gallery-card" data-index="2" type="button">
+            <img src="/images/nordicflow-databricks.png" alt="NordicFlow Azure Databricks workspace" />
+            <span><strong>Databricks workspace</strong><small>Workspace for PySpark jobs, data quality and medallion processing.</small></span>
+          </button>
+          <button class="gallery-card" data-index="3" type="button">
+            <img src="/images/nordicflow-access.png" alt="NordicFlow Databricks workspace access configuration" />
+            <span><strong>Identity and access</strong><small>Workspace access configured for administrators and automated deployments.</small></span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="lightbox" aria-label="Screenshot viewer">
+      <button class="close" type="button" aria-label="Close screenshot">×</button>
+      <button class="previous" type="button" aria-label="Previous screenshot">‹</button>
+      <figure>
+        <img src="" alt="" />
+        <figcaption></figcaption>
+      </figure>
+      <button class="next" type="button" aria-label="Next screenshot">›</button>
+    </dialog>
+
+    <script src="/assets/nordicflow-gallery.js"></script>
+  </body>
+</html>

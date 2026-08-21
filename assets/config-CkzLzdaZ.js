@@ -47,7 +47,7 @@ const e = {
       technologies: ".NET, React, Azure, Databricks, PySpark, PostgreSQL, Terraform, Docker, GitHub Actions",
       image: "/images/nordicflow-dashboard.png",
       description: "A hands-on supply-chain intelligence platform I am building to learn Azure and Databricks in practice. It explores secure event ingestion, medallion data pipelines, observability, infrastructure as code and an authenticated operations dashboard.",
-      link: "https://github.com/oumar969/NordicFlow"
+      link: "/nordicflow.html"
     },
     { id: 1, title: "Rentop", category: "Client / Full-Stack", technologies: "Next.js, TypeScript, Prisma, Turso, Vercel", image: "/images/rentop.png", description: "A complete business platform for a Danish cleaning company — customer booking, admin analytics, invoicing, gift cards, loyalty and SEO.", link: "https://rentop.dk" },
     { id: 2, title: "Lumo", category: "Real-Time Mobile", technologies: "React Native, Firebase, Node.js, Turso", image: "/images/lumo-screenshots/lumo-home.png", description: "A private creative collaboration app for live drawing, shared notes, presence and invite-only spaces.", link: "https://github.com/oumar969/Lumo-app" },
