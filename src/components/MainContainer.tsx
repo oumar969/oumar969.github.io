@@ -22,6 +22,11 @@ const MainContainer = ({ children }: PropsWithChildren) => {
   );
 
   useEffect(() => {
+    let animationTimer: ReturnType<typeof setTimeout> | undefined;
+    import("./utils/initialFX").then((module) => {
+      animationTimer = setTimeout(() => module.initialFX?.(), 100);
+    });
+
     const resizeHandler = () => {
       setSplitText();
       setIsDesktopView(window.innerWidth > 1024);
@@ -29,6 +34,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
     resizeHandler();
     window.addEventListener("resize", resizeHandler);
     return () => {
+      if (animationTimer !== undefined) clearTimeout(animationTimer);
       window.removeEventListener("resize", resizeHandler);
     };
   }, []);

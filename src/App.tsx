@@ -7,7 +7,6 @@ import "./App.css";
 const CharacterModel = lazy(() => import("./components/Character"));
 const MainContainer = lazy(() => import("./components/MainContainer"));
 const MyWorks = lazy(() => import("./pages/MyWorks"));
-import { LoadingProvider } from "./context/LoadingProvider";
 
 const App = () => {
   return (
@@ -16,15 +15,13 @@ const App = () => {
         <Route
           path="/"
           element={
-            <LoadingProvider>
-              <Suspense>
-                <MainContainer>
-                  <Suspense>
-                    <CharacterModel />
-                  </Suspense>
-                </MainContainer>
-              </Suspense>
-            </LoadingProvider>
+            <Suspense>
+              <MainContainer>
+                <Suspense>
+                  <CharacterModel />
+                </Suspense>
+              </MainContainer>
+            </Suspense>
           }
         />
         <Route
