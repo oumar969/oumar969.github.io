@@ -143,3 +143,6 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* The project gallery must scroll when opened directly. */
+body:has(.myworks-page) { overflow-y: auto !important; }

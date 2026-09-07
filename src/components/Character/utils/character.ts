@@ -27,7 +27,7 @@ const setCharacter = (
           blobUrl,
           async (gltf) => {
             character = gltf.scene;
-            await renderer.compileAsync(character, camera, scene);
+
             character.traverse((child: any) => {
               if (child.isMesh) {
                 const mesh = child as THREE.Mesh;
@@ -39,6 +39,8 @@ const setCharacter = (
                 }
               }
             });
+            await renderer.compileAsync(character, camera, scene);
+            URL.revokeObjectURL(blobUrl);
             resolve(gltf);
             setCharTimeline(character, camera);
             setAllTimeline();

@@ -41,6 +41,9 @@ const Scene = () => {
       camera.zoom = 1.1;
       camera.updateProjectionMatrix();
 
+      let disposed = false;
+      let frameId = 0;
+      let introTimer: ReturnType<typeof setTimeout> | undefined;
       let headBone: THREE.Object3D | null = null;
       let screenLight: any | null = null;
       let mixer: THREE.AnimationMixer;
@@ -51,7 +54,7 @@ const Scene = () => {
       const { loadCharacter } = setCharacter(renderer, scene, camera);
 
       loadCharacter().then((gltf) => {
-        if (gltf) {
+        if (gltf && !disposed) {
           const animations = setAnimations(gltf);
           hoverDivRef.current && animations.hover(gltf, hoverDivRef.current);
           mixer = animations.mixer;
@@ -60,7 +63,7 @@ const Scene = () => {
           scene.add(character);
           headBone = character.getObjectByName("spine006") || null;
           screenLight = character.getObjectByName("screenlight") || null;
-          setTimeout(() => {
+          introTimer = setTimeout(() => {
             light.turnOnLights();
             animations.startIntro();
           }, 250);
@@ -102,7 +105,8 @@ const Scene = () => {
         landingDiv.addEventListener("touchend", onTouchEnd);
       }
       const animate = () => {
-        requestAnimationFrame(animate);
+        if (disposed) return;
+        frameId = requestAnimationFrame(animate);
         if (headBone) {
           handleHeadRotation(
             headBone,
@@ -114,7 +118,7 @@ const Scene = () => {
           );
           light.setPointLight(screenLight);
         }
-        const delta = clock.getDelta();
+        const delta = Math.min(clock.getDelta(), 0.05);
         if (mixer) {
           mixer.update(delta);
         }
@@ -122,6 +126,9 @@ const Scene = () => {
       };
       animate();
       return () => {
+        disposed = true;
+        cancelAnimationFrame(frameId);
+        clearTimeout(introTimer);
         clearTimeout(debounce);
         scene.clear();
         renderer.dispose();

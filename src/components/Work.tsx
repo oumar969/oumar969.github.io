@@ -1,3 +1,4 @@
+import ProjectDetails from "./ProjectDetails";
 import "./styles/Work.css";
 import WorkImage from "./WorkImage";
 import gsap from "gsap";
@@ -76,8 +77,7 @@ const Work = () => {
                     <p>{project.category}</p>
                   </div>
                 </div>
-                <h4>Tools and features</h4>
-                <p>{project.technologies}</p>
+                <ProjectDetails project={project} />
               </div>
               <WorkImage image={project.image} alt={project.title} link={project.link} />
             </div>
