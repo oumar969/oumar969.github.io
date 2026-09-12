@@ -6,7 +6,7 @@ const destinations: Record<number, { demo?: string; code?: string; study?: strin
   1: { demo: "https://rentop.dk" },
   7: { demo: "https://www.aerosight.dk/", code: "https://github.com/oumar969/-AeroSight" },
   2: { code: "https://github.com/oumar969/Lumo-app" },
-  3: { code: "https://github.com/Zenbax/for-hinanden-frontend" },
+  3: { study: "/forhinanden.html", code: "https://github.com/Zenbax/for-hinanden-frontend" },
   4: { demo: "https://padel-score-ab0b5.web.app", code: "https://github.com/oumar969/padel-score" },
   5: { code: "https://github.com/oumar969/SmartCharger" },
   6: { code: "https://github.com/oumar969/timetrack-pro" },
