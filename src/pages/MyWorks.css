@@ -45,9 +45,9 @@
 
 .myworks-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 30px;
-  max-width: 1400px;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  gap: 36px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
@@ -84,7 +84,7 @@
 
 .myworks-card-image {
   width: 100%;
-  height: 220px;
+  height: 280px;
   overflow: hidden;
 }
 
@@ -100,7 +100,7 @@
 }
 
 .myworks-card-info {
-  padding: 25px;
+  padding: 30px;
 }
 
 .myworks-card-info h3 {
@@ -141,8 +141,10 @@
 
   .myworks-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .myworks-card-image {
+    height: 240px;
   }
 }
-
-/* The project gallery must scroll when opened directly. */
-body:has(.myworks-page) { overflow-y: auto !important; }

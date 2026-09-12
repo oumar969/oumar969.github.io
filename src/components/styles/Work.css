@@ -36,7 +36,7 @@
   padding: 80px;
   display: flex;
   flex-direction: column;
-  width: 600px;
+  width: 680px;
   box-sizing: border-box;
   border-right: 1px solid #363636;
   flex-shrink: 0;
@@ -147,12 +147,12 @@
 
 .work-image img {
   max-width: 100%;
-  max-height: 350px;
+  max-height: 380px;
 }
 
 @media only screen and (max-height: 900px) {
   .work-image img {
-    max-height: 250px;
+    max-height: 290px;
   }
 
   .work-box {
@@ -181,8 +181,8 @@
   }
 
   .work-box {
-    width: 450px;
-    padding: 50px;
+    width: 500px;
+    padding: 55px;
   }
 
   .work-flex {
@@ -195,10 +195,10 @@
   }
 }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1100px) {
   .work-box {
-    width: 350px;
-    padding: 30px;
+    width: 400px;
+    padding: 35px;
   }
 
   .work-flex {
@@ -209,7 +209,7 @@
 
 @media only screen and (max-height: 650px) {
   .work-image img {
-    max-height: 200px;
+    max-height: 240px;
   }
 
   .work-section h2 {
@@ -349,14 +349,4 @@
   .see-all-works p {
     font-size: 14px;
   }
-}
-/* Make space for the project purpose, technology list and both actions. */
-.work-flex .work-box { width: 470px; padding: 24px 32px; gap: 20px; flex-direction: column; }
-.work-image img { max-height: 180px; object-fit: contain; }
-.work-title { margin-bottom: 10px; }
-@media (max-width: 768px) {
-  .work-flex .work-box { width: 100%; padding: 28px 15px; }
-}
-@media (min-width: 769px) and (max-height: 760px) {
-  .work-flex .work-box { overflow-y: auto; }
 }
