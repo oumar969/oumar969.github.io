@@ -152,18 +152,19 @@
 
 @media only screen and (max-height: 900px) {
   .work-image img {
-    max-height: 290px;
+    max-height: 220px;
   }
 
   .work-box {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    gap: 24px;
   }
 
   .work-section h2 {
-    font-size: 60px;
-    margin-bottom: 30px;
-    margin-top: 70px;
+    font-size: 52px;
+    margin-bottom: 18px;
+    margin-top: 42px;
   }
 }
 
@@ -209,7 +210,7 @@
 
 @media only screen and (max-height: 650px) {
   .work-image img {
-    max-height: 240px;
+    max-height: 160px;
   }
 
   .work-section h2 {
@@ -218,7 +219,9 @@
   }
 
   .work-box {
-    gap: 20px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    gap: 16px;
   }
 }
 
