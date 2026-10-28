@@ -88,6 +88,11 @@ const Navbar = () => {
             </a>
           </li>
           <li>
+            <a data-href="#ml-projects" href="#ml-projects">
+              <HoverLinks text="ML LAB" />
+            </a>
+          </li>
+          <li>
             <a data-href="#contact" href="#contact">
               <HoverLinks text="CONTACT" />
             </a>

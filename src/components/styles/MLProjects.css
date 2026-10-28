@@ -1,0 +1,431 @@
+.ml-projects {
+  position: relative;
+  padding: 140px 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 78% 28%, rgba(97, 232, 187, 0.11), transparent 30%),
+    radial-gradient(circle at 16% 82%, rgba(194, 164, 255, 0.12), transparent 34%),
+    var(--backgroundColor);
+}
+
+.ml-projects::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(to bottom, transparent, black 22%, black 78%, transparent);
+}
+
+.ml-projects-inner {
+  position: relative;
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.ml-projects-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 12px 40px;
+  margin-bottom: 28px;
+}
+
+.ml-projects-header > p {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: #61e8bb;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.ml-projects-header h2 {
+  margin: 0;
+  font-size: clamp(48px, 7vw, 92px);
+  font-weight: 420;
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+.ml-projects-header h2 span {
+  color: var(--accentColor);
+}
+
+.ml-projects-intro {
+  max-width: 430px;
+  color: #b8b1bd;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.ml-project-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(380px, 0.92fr);
+  min-height: 610px;
+  overflow: hidden;
+  border: 1px solid rgba(194, 164, 255, 0.22);
+  border-radius: 24px;
+  background: rgba(17, 12, 20, 0.92);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.38);
+}
+
+.ml-projects-grid {
+  display: flex;
+  transition: transform 0.65s cubic-bezier(0.22, 0.8, 0.22, 1);
+  will-change: transform;
+}
+
+.ml-projects-viewport {
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.ml-carousel-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.ml-carousel-controls p {
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  color: #716a75;
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+}
+
+.ml-carousel-controls p span:first-child {
+  color: #f0e9f3;
+}
+
+.ml-carousel-controls > div {
+  display: flex;
+  gap: 10px;
+}
+
+.ml-carousel-controls button {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid rgba(194, 164, 255, 0.28);
+  border-radius: 50%;
+  color: #f3ebf6;
+  background: rgba(194, 164, 255, 0.075);
+  font: inherit;
+  font-size: 19px;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.ml-carousel-controls button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(194, 164, 255, 0.58);
+  background: rgba(194, 164, 255, 0.16);
+}
+
+.ml-carousel-controls button:focus-visible {
+  outline: 2px solid #c2a4ff;
+  outline-offset: 4px;
+}
+
+.ml-project-card:nth-child(even) .ml-project-visual {
+  order: 2;
+}
+
+.ml-project-card {
+  flex: 0 0 100%;
+}
+
+.ml-project-visual {
+  position: relative;
+  min-height: 430px;
+  overflow: hidden;
+  background: #070908;
+}
+
+.ml-project-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 52%, rgba(11, 8, 12, 0.7) 100%);
+  pointer-events: none;
+}
+
+.ml-project-visual img,
+.ml-project-visual video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: 58% center;
+  filter: saturate(0.82) contrast(1.04) brightness(0.86);
+  transition: transform 0.8s cubic-bezier(0.2, 0.75, 0.2, 1), filter 0.8s ease;
+}
+
+.ml-project-visual video {
+  position: absolute;
+  inset: 0;
+}
+
+.ml-project-card:hover .ml-project-visual img {
+  transform: scale(1.025);
+  filter: saturate(0.95) contrast(1.04) brightness(0.92);
+}
+
+.ml-project-visual-topline {
+  position: absolute;
+  z-index: 2;
+  top: 22px;
+  left: 22px;
+  right: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.ml-project-status {
+  padding: 7px 10px;
+  border: 1px solid rgba(97, 232, 187, 0.48);
+  border-radius: 999px;
+  color: #8df4d1;
+  background: rgba(5, 20, 15, 0.62);
+  backdrop-filter: blur(8px);
+}
+
+.ml-project-scanline {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 62%;
+  height: 1px;
+  background: rgba(97, 232, 187, 0.8);
+  box-shadow: 0 0 16px rgba(97, 232, 187, 0.6);
+  opacity: 0.62;
+}
+
+.ml-project-content {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(34px, 4.5vw, 64px);
+}
+
+.ml-project-title-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.ml-project-kicker {
+  margin: 0 0 14px;
+  color: #61e8bb;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.ml-project-title-row h3 {
+  margin: 0;
+  font-size: clamp(38px, 4vw, 58px);
+  font-weight: 520;
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.ml-project-title-row h4 {
+  margin: 10px 0 0;
+  color: #c8bdcf;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.ml-project-index {
+  color: rgba(194, 164, 255, 0.22);
+  font-size: 58px;
+  font-weight: 700;
+  line-height: 0.9;
+}
+
+.ml-project-description {
+  margin: 34px 0 30px;
+  color: #f2edf4;
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+.ml-project-details {
+  display: grid;
+  gap: 22px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ml-project-details span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--accentColor);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ml-project-details p {
+  margin: 0;
+  color: #aaa2ad;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.ml-project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: auto 0 0;
+  padding-top: 30px;
+  list-style: none;
+}
+
+.ml-project-tech li {
+  padding: 8px 11px;
+  border: 1px solid rgba(194, 164, 255, 0.22);
+  border-radius: 8px;
+  color: #e8deee;
+  background: rgba(194, 164, 255, 0.075);
+  font-size: 12px;
+}
+
+.ml-project-actions {
+  display: flex;
+  padding-top: 18px;
+}
+
+.ml-project-actions a,
+.ml-project-actions span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 13px;
+  border: 1px solid rgba(194, 164, 255, 0.24);
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.ml-project-actions a {
+  color: #f4edfa;
+  background: rgba(194, 164, 255, 0.12);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.ml-project-actions a:hover {
+  color: #fff;
+  border-color: rgba(194, 164, 255, 0.55);
+  background: rgba(194, 164, 255, 0.2);
+}
+
+.ml-project-actions span {
+  color: #938b98;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+@media (max-width: 900px) {
+  .ml-projects {
+    padding: 100px 0;
+  }
+
+  .ml-projects-header {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .ml-projects-intro {
+    max-width: 580px;
+  }
+
+  .ml-project-card {
+    grid-template-columns: 1fr;
+  }
+
+  .ml-project-card:nth-child(even) .ml-project-visual {
+    order: 0;
+  }
+
+  .ml-project-visual {
+    min-height: min(58vw, 480px);
+  }
+}
+
+@media (max-width: 600px) {
+  .ml-projects {
+    padding: 76px 0;
+  }
+
+  .ml-projects-inner {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .ml-projects-header {
+    margin-bottom: 22px;
+  }
+
+  .ml-projects-header h2 {
+    font-size: 48px;
+  }
+
+  .ml-projects-intro {
+    font-size: 15px;
+  }
+
+  .ml-project-card {
+    border-radius: 18px;
+  }
+
+  .ml-projects-viewport {
+    border-radius: 18px;
+  }
+
+  .ml-carousel-controls button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .ml-project-visual {
+    min-height: 280px;
+  }
+
+  .ml-project-content {
+    padding: 28px 22px 30px;
+  }
+
+  .ml-project-index {
+    display: none;
+  }
+
+  .ml-project-description {
+    margin: 26px 0;
+    font-size: 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ml-projects-grid {
+    transition: none;
+  }
+}

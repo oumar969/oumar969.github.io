@@ -17,6 +17,34 @@ export const config = {
     { id: 5, title: "SmartCharger", category: "Clean Energy / Full-Stack", technologies: ".NET 8, React, TypeScript, ML.NET, SQLite, Docker", image: "/images/smartcharger.png", description: "Built to help Danish EV drivers find cheaper or greener charging windows using live electricity prices, carbon-intensity data and price forecasts.", link: "https://github.com/oumar969/SmartCharger" },
     { id: 6, title: "TimeTrack Pro", category: "Workforce Management", technologies: "React, Node.js, Express, PostgreSQL, JWT, Docker", image: "/images/timetrack-pro.png", description: "Built to simplify employee time tracking, replacing scattered records with secure clock-in, shift history and clear weekly reports.", link: "https://github.com/oumar969/timetrack-pro" }
   ],
+  mlProjects: [
+    {
+      id: "sheep-counter",
+      title: "SheepTrack",
+      subtitle: "Automated sheep counting from video",
+      status: "Prototype",
+      image: "/images/ml-sheep-counter.jpg",
+      description: "Detects, tracks and counts sheep crossing a virtual line in drone and surveillance video.",
+      approach: "YOLO detects sheep, ByteTrack follows each animal, and OpenCV handles video and crossing logic.",
+      limitations: "Dense overlap and camera movement still cause errors; accuracy is not yet benchmarked.",
+      technologies: ["Python", "PyTorch", "Ultralytics YOLO", "ByteTrack", "OpenCV"],
+      video: null,
+      github: null
+    },
+    {
+      id: "parking-analysis",
+      title: "ParkVision",
+      subtitle: "Parking occupancy analysis with computer vision",
+      status: "Prototype",
+      image: "/images/ml-parking-analysis.jpg",
+      description: "Classifies mapped parking bays as free, occupied or uncertain and records observed occupancy time.",
+      approach: "Camera stabilisation, bay mapping and a local image classifier produce annotated video, CSV and JSON.",
+      limitations: "Shadows, angle and bay mapping can cause errors. Times are video seconds, not real parking duration.",
+      technologies: ["Python", "OpenCV", "NumPy", "Machine Learning"],
+      video: "/video/parking-analysis-demo.webm",
+      github: null
+    }
+  ],
   contact: { email: "oammar198@gmail.com", github: "https://github.com/oumar969", linkedin: "https://www.linkedin.com/in/omar-a-8a2491253/", twitter: "https://github.com/oumar969", facebook: "https://github.com/oumar969", instagram: "https://github.com/oumar969" },
   skills: {
     develop: { title: "SOFTWARE ENGINEER", description: "Reliable software with a Data Engineering specialization", details: "I build maintainable systems across backend, APIs and databases. My Data Engineering experience includes Python, SQL, ETL pipelines, dimensional modelling and Power BI.", tools: ["C#", ".NET", "Python", "SQL", "REST APIs", "ETL Pipelines", "PostgreSQL", "Power BI", "Docker", "Git"] },
