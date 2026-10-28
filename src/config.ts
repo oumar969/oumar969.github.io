@@ -43,6 +43,19 @@ export const config = {
       technologies: ["Python", "OpenCV", "NumPy", "Machine Learning"],
       video: "/video/parking-analysis-demo.webm",
       github: null
+    },
+    {
+      id: "product-counter",
+      title: "ProductFlow",
+      subtitle: "Automated product counting from video",
+      status: "Prototype",
+      image: "/images/ml-product-counter.jpg",
+      description: "Tracks products on conveyor belts and counts each passage across a virtual line.",
+      approach: "YOLO-World detects parcels, while OpenCV handles cap tracking, filling-station arrivals and structured exports.",
+      limitations: "Tested on three videos. Overlap and changing camera angles can still cause errors.",
+      technologies: ["Python", "OpenCV", "NumPy", "Ultralytics YOLO-World", "PyTorch"],
+      video: "/video/product-counter-demo.webm",
+      github: null
     }
   ],
   contact: { email: "oammar198@gmail.com", github: "https://github.com/oumar969", linkedin: "https://www.linkedin.com/in/omar-a-8a2491253/", twitter: "https://github.com/oumar969", facebook: "https://github.com/oumar969", instagram: "https://github.com/oumar969" },
