@@ -2,6 +2,8 @@ import "./styles/ProjectDetails.css";
 
 type Project = { title: string; description: string; technologies: string; link: string; id: number };
 const destinations: Record<number, { demo?: string; code?: string; study?: string }> = {
+  9: { demo: "https://pdfsamtale.onrender.com/", code: "https://github.com/oumar969/Chat_with_your_PDF" },
+  10: { demo: "https://su-overblik.vercel.app/", code: "https://github.com/oumar969/su-overblik" },
   8: { study: "/nordicflow.html", code: "https://github.com/oumar969/NordicFlow" },
   1: { demo: "https://rentop.dk" },
   7: { demo: "https://www.aerosight.dk/", code: "https://github.com/oumar969/-AeroSight" },

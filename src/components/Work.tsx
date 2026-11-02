@@ -1,100 +1,112 @@
-import ProjectDetails from "./ProjectDetails";
-import "./styles/Work.css";
-import WorkImage from "./WorkImage";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect } from "react";
-import { config } from "../config";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { config } from "../config";
+import "./styles/Work.css";
 
-gsap.registerPlugin(ScrollTrigger);
+const projectLinks: Record<number, { demo?: string; code?: string; study?: string }> = {
+  9: { demo: "https://pdfsamtale.onrender.com/", code: "https://github.com/oumar969/Chat_with_your_PDF" },
+  10: { demo: "https://su-overblik.vercel.app/", code: "https://github.com/oumar969/su-overblik" },
+  8: { study: "/nordicflow.html", code: "https://github.com/oumar969/NordicFlow" },
+  1: { demo: "https://rentop.dk" },
+  7: { demo: "https://www.aerosight.dk/", code: "https://github.com/oumar969/-AeroSight" },
+  2: { code: "https://github.com/oumar969/Lumo-app" },
+  3: { study: "/forhinanden.html", code: "https://github.com/Zenbax/for-hinanden-frontend" },
+  4: { demo: "https://padel-score-ab0b5.web.app", code: "https://github.com/oumar969/padel-score" },
+  5: { code: "https://github.com/oumar969/SmartCharger" },
+  6: { code: "https://github.com/oumar969/timetrack-pro" },
+};
 
 const Work = () => {
-  useEffect(() => {
-    // Disable pinning on mobile to allow scrolling
-    if (window.innerWidth <= 768) return;
+  const [activeProject, setActiveProject] = useState<number | null>(null);
+  const projects = config.projects;
+  const selectedProject = activeProject === null ? null : projects[activeProject];
+  const selectedLinks = selectedProject ? projectLinks[selectedProject.id] ?? {} : {};
 
-    let translateX: number = 0;
-
-    function setTranslateX() {
-      const box = document.getElementsByClassName("work-box");
-      if (box.length === 0) return;
-      const rectLeft = document
-        .querySelector(".work-container")!
-        .getBoundingClientRect().left;
-      const rect = box[0].getBoundingClientRect();
-      const parentWidth = box[0].parentElement!.getBoundingClientRect().width;
-      let padding: number =
-        parseInt(window.getComputedStyle(box[0]).padding) / 2;
-      translateX = rect.width * box.length - (rectLeft + parentWidth) + padding;
-    }
-
-    setTranslateX();
-
-    let timeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".work-section",
-        start: "top top",
-        end: `+=${translateX}`,
-        scrub: 1,
-        pin: true,
-        pinSpacing: true,
-        anticipatePin: 1,
-        id: "work",
-        invalidateOnRefresh: true,
-      },
-    });
-
-    timeline.to(".work-flex", {
-      x: -translateX,
-      ease: "none",
-    });
-
-    // Refresh ScrollTrigger after layout settles
-    ScrollTrigger.refresh();
-
-    // Clean up
-    return () => {
-      timeline.kill();
-      ScrollTrigger.getById("work")?.kill();
-    };
-  }, []);
   return (
-    <div className="work-section" id="work">
+    <section className="work-section" id="work" aria-labelledby="work-title">
       <div className="work-container section-container">
-        <h2>
-          My <span>Work</span>
-        </h2>
-        <div className="work-flex">
-          {config.projects.slice(0, 8).map((project, index) => (
-            <div className="work-box" key={project.id}>
-              <div className="work-info">
-                <div className="work-title">
-                  <h3>0{index + 1}</h3>
+        <header className="work-header">
+          <div>
+            <p className="work-eyebrow">Selected work · 2024—2026</p>
+            <h2 id="work-title">Projects with <span>purpose.</span></h2>
+          </div>
+          <p className="work-intro">
+            Full-stack products, data platforms and real-time experiences. Hover a project to explore it.
+          </p>
+        </header>
 
-                  <div>
-                    <h4>{project.title}</h4>
-                    <p>{project.category}</p>
-                  </div>
+        <div className="work-showcase" onMouseLeave={() => setActiveProject(null)}>
+          <div className="work-list" aria-label="Selected projects">
+            {projects.map((project, index) => {
+              const isExternal = !project.link.startsWith("/");
+
+              return (
+                <a
+                  className={`work-list-item ${activeProject === index ? "is-active" : ""}`}
+                  href={project.link}
+                  key={project.id}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
+                  onMouseEnter={() => setActiveProject(index)}
+                  onFocus={() => setActiveProject(index)}
+                  onBlur={() => setActiveProject(null)}
+                  data-cursor="disable"
+                >
+                  <span className="work-list-number">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="work-list-copy">
+                    <strong>{project.title}</strong>
+                    <span>{project.category}</span>
+                  </span>
+                  <span className="work-list-arrow" aria-hidden="true">↗</span>
+                  <img className="work-list-mobile-image" src={project.image} alt="" loading="lazy" />
+                </a>
+              );
+            })}
+
+            <Link to="/myworks" className="work-archive-link" data-cursor="disable">
+              <span>View complete project archive</span>
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+
+          <div className={`work-preview ${selectedProject ? "has-project" : ""}`} aria-live="polite">
+            {selectedProject ? (
+              <div className="work-preview-card">
+                <img className="work-preview-backdrop" src={selectedProject.image} alt="" aria-hidden="true" />
+                <img className="work-preview-image" src={selectedProject.image} alt={`${selectedProject.title} project preview`} />
+                <span className="work-preview-shade" />
+                <span className="work-preview-label">
+                  <span className="work-preview-meta">Selected project</span>
+                  <strong>{selectedProject.title}</strong>
+                </span>
+                <div className="work-preview-actions">
+                  {selectedLinks.demo && (
+                    <a href={selectedLinks.demo} target="_blank" rel="noopener noreferrer" data-cursor="disable">
+                      Live Demo <span>↗</span>
+                    </a>
+                  )}
+                  {selectedLinks.study && (
+                    <a href={selectedLinks.study} data-cursor="disable">
+                      Case Study <span>↗</span>
+                    </a>
+                  )}
+                  {selectedLinks.code && (
+                    <a href={selectedLinks.code} target="_blank" rel="noopener noreferrer" data-cursor="disable">
+                      View Code <span>↗</span>
+                    </a>
+                  )}
                 </div>
-                <ProjectDetails project={project} />
               </div>
-              <WorkImage image={project.image} alt={project.title} link={project.link} />
-            </div>
-          ))}
-          {/* See All Works Button */}
-          <div className="work-box work-box-cta">
-            <div className="see-all-works">
-              <h3>Want to see more?</h3>
-              <p>Explore all of my projects and creations</p>
-              <Link to="/myworks" className="see-all-btn" data-cursor="disable">
-                See All Works →
-              </Link>
-            </div>
+            ) : (
+              <div className="work-preview-empty">
+                <span>{String(projects.length).padStart(2, "0")} selected projects</span>
+                <p>Move across the list<br />to reveal each build.</p>
+              </div>
+            )}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

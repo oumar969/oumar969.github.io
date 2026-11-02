@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" fill="#eaf0e7"/><rect x="70" y="66" width="1060" height="668" rx="22" fill="#fff" stroke="#d5e0d1"/>
+<path d="M70 156h1060M322 156v578" stroke="#e4eae1"/><rect x="103" y="97" width="34" height="34" rx="8" fill="#254b38"/><path d="M113 105h15v19h-15zM116 110h9m-9 5h9m-9 5h6" stroke="#fff" fill="none" stroke-width="1.5"/>
+<g font-family="Segoe UI,Arial,sans-serif" fill="#26392e"><text x="150" y="122" font-size="23" font-weight="600">PDFsamtale</text><text x="1010" y="118" font-size="13" fill="#698566">PROTOTYPE</text>
+<text x="103" y="213" font-size="15" font-weight="600">Dit dokument</text><rect x="100" y="238" width="190" height="128" rx="12" fill="#f5f8f2" stroke="#dbe5d5" stroke-dasharray="5 5"/>
+<text x="125" y="286" font-size="20" fill="#56876a">▤</text><text x="125" y="322" font-size="14">Upload en PDF</text><text x="103" y="407" font-size="12" fill="#71816a">Ord- og frasesøgning</text><text x="103" y="434" font-size="12" fill="#71816a">Korte svar med kilder</text>
+<text x="365" y="218" font-size="27" font-weight="600">Dit dokument, i samtale.</text><text x="365" y="253" font-size="13" fill="#798675">Spørg. Find. Forstå.</text>
+<rect x="365" y="290" width="714" height="76" rx="12" fill="#f2f6ee"/><text x="390" y="335" font-size="17">Hvad er dokumentets vigtigste pointer?</text>
+<rect x="365" y="390" width="714" height="207" rx="12" fill="#f8faf5" stroke="#e1e9da"/><text x="389" y="432" font-size="25" fill="#54a580">✦</text>
+<text x="429" y="432" font-size="17">Et konkret svar med udgangspunkt i din PDF.</text><text x="429" y="466" font-size="17">Find tilbage til de sider, svaret bygger på. [1]</text>
+<rect x="389" y="516" width="665" height="51" rx="8" fill="#fff" stroke="#d8e2d0"/><text x="410" y="548" font-size="14">›  Se kilder</text>
+<rect x="365" y="643" width="714" height="49" rx="24" fill="#fff" stroke="#d9e3d2"/><text x="389" y="674" font-size="13" fill="#7b8a73">Stil et spørgsmål til dokumentet …</text><text x="1040" y="675" font-size="22" fill="#477354">↑</text>
+</g></svg>
