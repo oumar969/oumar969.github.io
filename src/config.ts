@@ -18,18 +18,36 @@ export const config = {
     { id: 6, title: "TimeTrack Pro", category: "Workforce Management", technologies: "React, Node.js, Express, PostgreSQL, JWT, Docker", image: "/images/timetrack-pro.png", description: "Built to simplify employee time tracking, replacing scattered records with secure clock-in, shift history and clear weekly reports.", link: "https://github.com/oumar969/timetrack-pro" },
     { id: 10, title: "SU Overblik", category: "Student Finance / AI & ML", technologies: "JavaScript, Python, NumPy, Groq, MLflow, Docker, GitHub Actions, Vercel", image: "/images/su-overblik.png", description: "Built to help students understand Danish student loans through monthly repayment calculations, interest scenarios, budgets and extra-payment timelines. Includes an AI guide with validated calculator tools and an educational ML lab trained on synthetic scenarios.", link: "https://su-overblik.vercel.app/" }
   ],
+  aiAgents: [
+    {
+      id: "mailro",
+      title: "Mailro",
+      subtitle: "AI-powered Gmail triage",
+      status: "Working prototype",
+      image: "/images/mailro-cover.png",
+      video: "/video/mailro-demo.webm",
+      description: "Turns selected Gmail threads into a prioritized overview with concise summaries and draft replies when action is needed.",
+      highlights: [
+        "Read-only Gmail access through OAuth 2.0",
+        "Human-reviewed reply suggestions",
+        "Weekly automation backed by nine tests"
+      ],
+      technologies: ["Node.js", "Gmail API", "Google Gemini", "OAuth 2.0", "HTML", "CSS"],
+      safety: "Mailro cannot send, delete or move email. The user stays in control and sends every reply manually."
+    }
+  ],
   mlProjects: [
     {
-      id: "sheep-counter",
-      title: "SheepTrack",
-      subtitle: "Automated sheep counting from video",
-      status: "Prototype",
-      image: "/images/ml-sheep-counter.jpg",
-      description: "Detects, tracks and counts sheep crossing a virtual line in drone and surveillance video.",
-      approach: "YOLO detects sheep, ByteTrack follows each animal, and OpenCV handles video and crossing logic.",
-      limitations: "Dense overlap and camera movement still cause errors; accuracy is not yet benchmarked.",
-      technologies: ["Python", "PyTorch", "Ultralytics YOLO", "ByteTrack", "OpenCV"],
-      video: null,
+      id: "traffic-flow-analytics",
+      title: "TrafficFlow",
+      subtitle: "AI-powered lane and vehicle analytics",
+      status: "Working prototype",
+      image: "/images/traffic-flow-analytics.jpg",
+      description: "Detects, tracks and counts vehicles by class, direction and user-defined traffic lane.",
+      approach: "YOLOv8 and ByteTrack power tracking; OpenCV suggests lanes and Streamlit presents results. A KITTI car fine-tune reached 84.5% mAP50.",
+      limitations: "Lane suggestions require visual review. Counts and observed stop times are not yet systematically validated.",
+      technologies: ["Python", "YOLOv8", "ByteTrack", "OpenCV", "Streamlit", "NumPy"],
+      video: "/video/traffic-flow-demo.webm",
       github: null
     },
     {
@@ -56,6 +74,19 @@ export const config = {
       limitations: "Tested on three videos. Overlap and changing camera angles can still cause errors.",
       technologies: ["Python", "OpenCV", "NumPy", "Ultralytics YOLO-World", "PyTorch"],
       video: "/video/product-counter-demo.webm",
+      github: null
+    },
+    {
+      id: "sheep-counter",
+      title: "SheepTrack",
+      subtitle: "Automated sheep counting from video",
+      status: "Prototype",
+      image: "/images/ml-sheep-counter.jpg",
+      description: "Detects, tracks and counts sheep crossing a virtual line in drone and surveillance video.",
+      approach: "YOLO detects sheep, ByteTrack follows each animal, and OpenCV handles video and crossing logic.",
+      limitations: "Dense overlap and camera movement still cause errors; accuracy is not yet benchmarked.",
+      technologies: ["Python", "PyTorch", "Ultralytics YOLO", "ByteTrack", "OpenCV"],
+      video: null,
       github: null
     }
   ],

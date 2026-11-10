@@ -11,6 +11,7 @@ import Work from "./Work";
 import TechStackNew from "./TechStackNew";
 import CallToAction from "./CallToAction";
 import MLProjects from "./MLProjects";
+import AIAgents from "./AIAgents";
 import setSplitText from "./utils/splitText";
 
 const MainContainer = ({ children }: PropsWithChildren) => {
@@ -81,6 +82,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
         <Career />
         <Work />
         <MLProjects />
+        <AIAgents />
         <TechStackNew />
         <CallToAction />
         <Contact />

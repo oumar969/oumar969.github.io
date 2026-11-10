@@ -45,7 +45,53 @@
   font-size: 13px;
   letter-spacing: 0.2px;
 }
-@media only screen and (min-width: 500px) {
+.navbar-menu-toggle {
+  appearance: none;
+  border: 0;
+  padding: 2px 0;
+  background: transparent;
+  color: #eae5ec;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.9px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    align-items: flex-start;
+    padding: 17px 0;
+  }
+
+  .header ul {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    min-width: 148px;
+    padding: 15px 17px;
+    border: 1px solid rgba(194, 164, 255, 0.2);
+    border-radius: 14px;
+    background: rgba(11, 8, 12, 0.94);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+  }
+
+  .header ul.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (min-width: 769px) {
   .header {
     padding: 20px 0px;
   }
@@ -53,6 +99,7 @@
     flex-direction: row;
     align-items: center;
     font-size: 14px;
+    column-gap: clamp(14px, 2vw, 28px);
   }
   .header ul li {
     color: #eae5ec;
@@ -60,10 +107,8 @@
   .navbar-title {
     font-size: 16px;
   }
-}
-@media only screen and (min-width: 900px) {
-  .navbar-connect {
-    display: block;
+  .navbar-menu-toggle {
+    display: none;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -71,13 +116,22 @@
     padding: 35px 0px;
   }
   .header ul {
-    column-gap: 80px;
-    font-size: 16px;
-  }
-  .navbar-connect {
-    font-size: 16px;
+    column-gap: 36px;
+    font-size: 15px;
   }
   .navbar-title {
     font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 1550px) {
+  .header ul {
+    column-gap: 54px;
+    font-size: 16px;
+  }
+
+  .navbar-connect {
+    display: block;
+    font-size: 15px;
   }
 }

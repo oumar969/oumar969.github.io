@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
@@ -9,6 +9,8 @@ gsap.registerPlugin(ScrollTrigger);
 export let lenis: Lenis | null = null;
 
 const Navbar = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   useEffect(() => {
     // Initialize Lenis smooth scroll
     lenis = new Lenis({
@@ -76,7 +78,20 @@ const Navbar = () => {
         >
           oammar198@gmail.com
         </a>
-        <ul>
+        <button
+          className="navbar-menu-toggle"
+          type="button"
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="primary-navigation"
+          onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
+        >
+          {isMobileMenuOpen ? "CLOSE" : "MENU"}
+        </button>
+        <ul
+          id="primary-navigation"
+          className={isMobileMenuOpen ? "is-open" : ""}
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
           <li>
             <a data-href="#about" href="#about">
               <HoverLinks text="ABOUT" />
@@ -90,6 +105,11 @@ const Navbar = () => {
           <li>
             <a data-href="#ml-projects" href="#ml-projects">
               <HoverLinks text="ML LAB" />
+            </a>
+          </li>
+          <li>
+            <a data-href="#ai-agents" href="#ai-agents">
+              <HoverLinks text="AI AGENTS" />
             </a>
           </li>
           <li>
